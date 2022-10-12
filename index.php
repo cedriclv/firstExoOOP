@@ -1,14 +1,17 @@
 <?php
 require_once './Bicycle.php';
 require_once './Car.php';
-$bike = new Bicycle('red');
-var_dump($bike);
-echo ($bike->forward());
-echo ($bike->brake());
+require_once './Truck.php';
+$bike = new Bicycle('red', 2);
+//var_dump($bike);
 
 
 $voiture = new Car('red', 3, 'diesel');
-var_dump($voiture);
+//var_dump($voiture);
 
-$voiture2 = new Car('green', 3, 'diesel');
-var_dump($voiture2);
+$voiture2 = new Car('green', 3, 'fuel');
+//var_dump($voiture2);
+
+
+$truck1 = new Truck(10, 'purple', 2, 'diesel');
+echo ($truck1->getEnergy());
