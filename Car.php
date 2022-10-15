@@ -14,6 +14,10 @@ class Car extends Vehicle
         $this->energy = $energy;
     }
 
+    public function changeWheels()
+    {
+        return 'wheels Changed';
+    }
 
     public function start()
     {

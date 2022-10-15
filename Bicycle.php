@@ -8,4 +8,9 @@ class Bicycle extends Vehicle
     {
         parent::__construct($color, $nbSeats);
     }
+
+    public function changeWheels()
+    {
+        return 'wheels Changed';
+    }
 }

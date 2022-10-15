@@ -15,6 +15,10 @@ class Truck extends Vehicle
         $this->inventoryCapacity = $inventoryCapacity;
         $this->energy = $energy;
     }
+    public function changeWheels()
+    {
+        return 'wheels Changed';
+    }
 
     public function isFill(): string
     {

@@ -1,6 +1,6 @@
 <?php
 
-class Vehicle
+abstract class Vehicle
 {
 
     protected int $nbWheels = 2;
@@ -13,6 +13,8 @@ class Vehicle
         $this->color = $color;
         $this->nbSeats = $nbSeats;
     }
+
+    abstract public function changeWheels();
 
     public function forward(): string
     {
