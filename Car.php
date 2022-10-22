@@ -6,6 +6,7 @@ class Car extends Vehicle
     public const ALLOWED_ENERGY = ['fuel', 'electric'];
     private string $energy;
     private int $energyLevel;
+    private bool $hasParkBrake;
 
 
     public function __construct(string $color, int $nbSeats, string $energy)
@@ -21,7 +22,10 @@ class Car extends Vehicle
 
     public function start()
     {
-        // code here
+        if ($this->getHasParkBrake()) {
+            throw (new Exception('brake set on !'));
+        }
+        return 'GO GO';
     }
     public function getEnergy(): string
     {
@@ -39,5 +43,23 @@ class Car extends Vehicle
     {
         if (in_array($energy, self::ALLOWED_ENERGY))
             $this->energy = $energy;
+    }
+
+    /**
+     * Set the value of hasParkBrake
+     *
+     * @return  self
+     */
+    public function setParkBrake(bool $hasParkBrake): void
+    {
+        $this->hasParkBrake = $hasParkBrake;
+    }
+
+    /**
+     * Get the value of hasParkBrake
+     */
+    public function getHasParkBrake()
+    {
+        return $this->hasParkBrake;
     }
 }
