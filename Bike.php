@@ -3,7 +3,7 @@
 require_once './Vehicle.php';
 require_once './LightableInterface.php';
 
-class Car extends Vehicle implements LightableInterface
+class Bike extends Vehicle implements LightableInterface
 {
     public const ALLOWED_ENERGY = ['fuel', 'electric'];
     private string $energy;
@@ -19,7 +19,11 @@ class Car extends Vehicle implements LightableInterface
 
     public function switchOn()
     {
-        return true;
+        if ($this-> currentSpeed >= 10)
+        {
+            return true;
+        }
+        return false;
     }
 
     public function switchOff()
